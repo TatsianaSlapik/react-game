@@ -7,7 +7,7 @@ import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Game levelNumber={1} />
+    <Game levelNumber={1}></Game>
   </React.StrictMode>,
   document.getElementById("root")
 );
