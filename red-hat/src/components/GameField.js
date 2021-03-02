@@ -2,7 +2,7 @@ import "./GameField.scss";
 import Row from "./Row";
 
 import React from "react";
-import { size, heroName, HOUSE, TREE, EMPTY } from "config/levels";
+import { size, HERO, TREE, EMPTY } from "config/levels";
 
 export default class GameField extends React.Component {
   constructor(props) {
@@ -15,7 +15,7 @@ export default class GameField extends React.Component {
   findHero() {
     for (var i = 0; i < size; i++) {
       for (var j = 0; j < size; j++) {
-        if (this.props.level[i][j].className === heroName) {
+        if (this.props.level[i][j].className === HERO) {
           return { row: i, column: j };
         }
       }
@@ -29,7 +29,9 @@ export default class GameField extends React.Component {
         if (
           heroPosition.column - 1 >= 0 &&
           this.props.level[heroPosition.row][heroPosition.column - 1]
-            .className === HOUSE
+            .className !== TREE &&
+          this.props.level[heroPosition.row][heroPosition.column - 1]
+            .className !== EMPTY
         ) {
           console.log("Win1");
         }
@@ -43,7 +45,7 @@ export default class GameField extends React.Component {
           ].className = EMPTY;
           this.props.level[heroPosition.row][
             heroPosition.column - 1
-          ].className = heroName;
+          ].className = HERO;
 
           this.setState(this.findHero);
         }
@@ -53,7 +55,9 @@ export default class GameField extends React.Component {
         if (
           heroPosition.row - 1 >= 0 &&
           this.props.level[heroPosition.row - 1][heroPosition.column]
-            .className === HOUSE
+            .className !== TREE &&
+          this.props.level[heroPosition.row - 1][heroPosition.column]
+            .className !== EMPTY
         ) {
           this.props.onLevelChanged();
           break;
@@ -68,7 +72,7 @@ export default class GameField extends React.Component {
           ].className = EMPTY;
           this.props.level[heroPosition.row - 1][
             heroPosition.column
-          ].className = heroName;
+          ].className = HERO;
 
           this.setState(this.findHero);
         }
@@ -77,7 +81,9 @@ export default class GameField extends React.Component {
         if (
           heroPosition.column + 1 <= size &&
           this.props.level[heroPosition.row][heroPosition.column + 1]
-            .className === HOUSE
+            .className !== TREE &&
+          this.props.level[heroPosition.row][heroPosition.column + 1]
+            .className !== EMPTY
         ) {
           this.props.onLevelChanged();
           break;
@@ -92,7 +98,7 @@ export default class GameField extends React.Component {
           ].className = EMPTY;
           this.props.level[heroPosition.row][
             heroPosition.column + 1
-          ].className = heroName;
+          ].className = HERO;
 
           this.setState(this.findHero);
         }
@@ -102,7 +108,9 @@ export default class GameField extends React.Component {
         if (
           heroPosition.row + 1 <= size &&
           this.props.level[heroPosition.row + 1][heroPosition.column]
-            .className === HOUSE
+            .className !== TREE &&
+          this.props.level[heroPosition.row + 1][heroPosition.column]
+            .className !== EMPTY
         ) {
           this.props.onLevelChanged();
           break;
@@ -117,7 +125,7 @@ export default class GameField extends React.Component {
           ].className = EMPTY;
           this.props.level[heroPosition.row + 1][
             heroPosition.column
-          ].className = heroName;
+          ].className = HERO;
 
           this.setState(this.findHero);
         }
@@ -139,7 +147,7 @@ export default class GameField extends React.Component {
     return (
       <div className="field">
         {this.props.level.map((row, index) => (
-          <Row row={row} key={index}></Row>
+          <Row row={row} key={index} hero={this.props.hero}></Row>
         ))}
       </div>
     );
@@ -153,7 +161,7 @@ export default class GameField extends React.Component {
   function findHero() {
     for (var i = 0; i < size; i++) {
       for (var j = 0; j < size; j++) {
-        if (level[i][j].className === heroName) {
+        if (level[i][j].className === HERO) {
           return { row: i, column: j };
         }
       }
@@ -174,7 +182,7 @@ export default class GameField extends React.Component {
           level[heroPosition.row][heroPosition.column - 1].className !== TREE
         ) {
           level[heroPosition.row][heroPosition.column].className = " ";
-          level[heroPosition.row][heroPosition.column - 1].className = heroName;
+          level[heroPosition.row][heroPosition.column - 1].className = HERO;
 
           setHeroPosition(findHero());
         }
@@ -192,7 +200,7 @@ export default class GameField extends React.Component {
           level[heroPosition.row - 1][heroPosition.column].className !== TREE
         ) {
           level[heroPosition.row][heroPosition.column].className = " ";
-          level[heroPosition.row - 1][heroPosition.column].className = heroName;
+          level[heroPosition.row - 1][heroPosition.column].className = HERO;
 
           setHeroPosition(findHero());
         }
@@ -209,7 +217,7 @@ export default class GameField extends React.Component {
           heroPosition.column + 1 <= size
         ) {
           level[heroPosition.row][heroPosition.column].className = " ";
-          level[heroPosition.row][heroPosition.column + 1].className = heroName;
+          level[heroPosition.row][heroPosition.column + 1].className = HERO;
           setHeroPosition(findHero());
         }
 
@@ -226,7 +234,7 @@ export default class GameField extends React.Component {
           heroPosition.row + 1 <= size
         ) {
           level[heroPosition.row][heroPosition.column].className = " ";
-          level[heroPosition.row + 1][heroPosition.column].className = heroName;
+          level[heroPosition.row + 1][heroPosition.column].className = HERO;
           setHeroPosition(findHero());
         }
         break;
