@@ -1,4 +1,4 @@
-import { RED_HAT } from "config/levels";
+import { RED_HAT } from "../config/levels";
 import React from "react";
 import redHatFinal from "../assets/final-redhat-and-grandma.jpg";
 import wolfFinal from "../assets/final-wolf.jpg";

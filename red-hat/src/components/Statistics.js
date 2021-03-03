@@ -1,3 +1,5 @@
+import React from "react";
+
 export default function Statistics() {
   let stats = JSON.parse(localStorage.getItem("stats"));
 

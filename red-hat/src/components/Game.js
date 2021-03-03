@@ -1,6 +1,6 @@
 import GameField from "./GameField";
 import "./Game.scss";
-import { EASY, EasyLevels, HardLevels, RED_HAT } from "config/levels";
+import { EASY, EasyLevels, HardLevels, RED_HAT } from "../config/levels";
 import React from "react";
 import Music from "./Music";
 import Counter from "./Counter";

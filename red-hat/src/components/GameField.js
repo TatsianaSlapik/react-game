@@ -2,7 +2,7 @@ import "./GameField.scss";
 import Row from "./Row";
 
 import React from "react";
-import { HERO, TREE, EMPTY } from "config/levels";
+import { HERO, TREE, EMPTY } from "../config/levels.js";
 
 export default class GameField extends React.Component {
   constructor(props) {

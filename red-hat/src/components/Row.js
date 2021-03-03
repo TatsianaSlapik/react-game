@@ -1,5 +1,6 @@
 import Cell from "./Cell";
 import { HERO } from "../config/levels";
+import React from "react";
 
 export default function Row(props) {
   return (
