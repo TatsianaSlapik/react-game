@@ -6,9 +6,16 @@ export default class Counter extends React.Component {
     this.state = { count: 0 };
     this.onKeyDown = this.onKeyDown.bind(this);
     this.countIncrement = this.countIncrement.bind(this);
+
+    let savedCount = localStorage.getItem("count");
+    if (savedCount !== null) {
+      this.state = JSON.parse(savedCount);
+    }
+    localStorage.setItem("count", JSON.stringify(this.state));
   }
   countIncrement() {
     this.setState({ count: this.state.count + 1 });
+    localStorage.setItem("count", JSON.stringify(this.state));
   }
   onKeyDown(e) {
     switch (e.keyCode) {
@@ -36,7 +43,6 @@ export default class Counter extends React.Component {
     document.removeEventListener("keydown", this.onKeyDown);
   }
   render() {
-    console.log("counter");
     return (
       <div className="count">
         <p>{this.state.count}</p>

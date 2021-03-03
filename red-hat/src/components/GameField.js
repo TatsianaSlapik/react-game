@@ -2,7 +2,7 @@ import "./GameField.scss";
 import Row from "./Row";
 
 import React from "react";
-import { size, HERO, TREE, EMPTY } from "config/levels";
+import { HERO, TREE, EMPTY } from "config/levels";
 
 export default class GameField extends React.Component {
   constructor(props) {
@@ -13,8 +13,8 @@ export default class GameField extends React.Component {
   }
 
   findHero() {
-    for (var i = 0; i < size; i++) {
-      for (var j = 0; j < size; j++) {
+    for (var i = 0; i < this.props.level.length; i++) {
+      for (var j = 0; j < this.props.level[i].length; j++) {
         if (this.props.level[i][j].className === HERO) {
           return { row: i, column: j };
         }
@@ -33,7 +33,8 @@ export default class GameField extends React.Component {
           this.props.level[heroPosition.row][heroPosition.column - 1]
             .className !== EMPTY
         ) {
-          console.log("Win1");
+          this.props.onLevelChanged();
+          break;
         }
         if (
           heroPosition.column - 1 >= 0 &&
@@ -79,7 +80,7 @@ export default class GameField extends React.Component {
         break;
       case 39: // right
         if (
-          heroPosition.column + 1 <= size &&
+          heroPosition.column + 1 < this.props.level.length &&
           this.props.level[heroPosition.row][heroPosition.column + 1]
             .className !== TREE &&
           this.props.level[heroPosition.row][heroPosition.column + 1]
@@ -89,9 +90,9 @@ export default class GameField extends React.Component {
           break;
         }
         if (
+          heroPosition.column + 1 < this.props.level.length &&
           this.props.level[heroPosition.row][heroPosition.column + 1]
-            .className !== TREE &&
-          heroPosition.column + 1 <= size
+            .className !== TREE
         ) {
           this.props.level[heroPosition.row][
             heroPosition.column
@@ -106,7 +107,7 @@ export default class GameField extends React.Component {
         break;
       case 40: //down
         if (
-          heroPosition.row + 1 <= size &&
+          heroPosition.row + 1 < this.props.level.length &&
           this.props.level[heroPosition.row + 1][heroPosition.column]
             .className !== TREE &&
           this.props.level[heroPosition.row + 1][heroPosition.column]
@@ -116,9 +117,9 @@ export default class GameField extends React.Component {
           break;
         }
         if (
+          heroPosition.row + 1 < this.props.level.length &&
           this.props.level[heroPosition.row + 1][heroPosition.column]
-            .className !== TREE &&
-          heroPosition.row + 1 <= size
+            .className !== TREE
         ) {
           this.props.level[heroPosition.row][
             heroPosition.column
@@ -145,7 +146,7 @@ export default class GameField extends React.Component {
 
   render() {
     return (
-      <div className="field">
+      <div className={`field ${this.props.difficulty}`}>
         {this.props.level.map((row, index) => (
           <Row row={row} key={index} hero={this.props.hero}></Row>
         ))}
@@ -153,107 +154,3 @@ export default class GameField extends React.Component {
     );
   }
 }
-
-/*export default function GameField(props) {
-  let [level] = useState(props.level);
-  let [heroPosition, setHeroPosition] = useState(findHero());
-
-  function findHero() {
-    for (var i = 0; i < size; i++) {
-      for (var j = 0; j < size; j++) {
-        if (level[i][j].className === HERO) {
-          return { row: i, column: j };
-        }
-      }
-    }
-  }
-
-  function onKeyDown(e) {
-    switch (e.keyCode) {
-      case 37: //left
-        if (
-          heroPosition.column - 1 >= 0 &&
-          level[heroPosition.row][heroPosition.column - 1].className === HOUSE
-        ) {
-          console.log("Win1");
-        }
-        if (
-          heroPosition.column - 1 >= 0 &&
-          level[heroPosition.row][heroPosition.column - 1].className !== TREE
-        ) {
-          level[heroPosition.row][heroPosition.column].className = " ";
-          level[heroPosition.row][heroPosition.column - 1].className = HERO;
-
-          setHeroPosition(findHero());
-        }
-
-        break;
-      case 38: //up
-        if (
-          heroPosition.row - 1 >= 0 &&
-          level[heroPosition.row - 1][heroPosition.column].className === HOUSE
-        ) {
-          console.log("Win1");
-        }
-        if (
-          heroPosition.row - 1 >= 0 &&
-          level[heroPosition.row - 1][heroPosition.column].className !== TREE
-        ) {
-          level[heroPosition.row][heroPosition.column].className = " ";
-          level[heroPosition.row - 1][heroPosition.column].className = HERO;
-
-          setHeroPosition(findHero());
-        }
-        break;
-      case 39: // right
-        if (
-          heroPosition.column + 1 <= size &&
-          level[heroPosition.row][heroPosition.column + 1].className === HOUSE
-        ) {
-          this.props.onLevelChanged();
-        }
-        if (
-          level[heroPosition.row][heroPosition.column + 1].className !== TREE &&
-          heroPosition.column + 1 <= size
-        ) {
-          level[heroPosition.row][heroPosition.column].className = " ";
-          level[heroPosition.row][heroPosition.column + 1].className = HERO;
-          setHeroPosition(findHero());
-        }
-
-        break;
-      case 40: //down
-        if (
-          heroPosition.row + 1 <= size &&
-          level[heroPosition.row + 1][heroPosition.column].className === HOUSE
-        ) {
-          console.log("Win1");
-        }
-        if (
-          level[heroPosition.row + 1][heroPosition.column].className !== TREE &&
-          heroPosition.row + 1 <= size
-        ) {
-          level[heroPosition.row][heroPosition.column].className = " ";
-          level[heroPosition.row + 1][heroPosition.column].className = HERO;
-          setHeroPosition(findHero());
-        }
-        break;
-      default:
-        return;
-    }
-  }
-
-  useEffect(() => {
-    document.addEventListener("keydown", onKeyDown);
-    return function cleanup() {
-      document.removeEventListener("keydown", onKeyDown);
-    };
-  });
-  return (
-    <div className="field">
-      {level.map((row, index) => (
-        <Row row={row} key={index}></Row>
-      ))}
-    </div>
-  );
-}*/

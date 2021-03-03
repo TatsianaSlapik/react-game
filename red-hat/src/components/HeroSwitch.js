@@ -9,7 +9,7 @@ export default class HeroSwitch extends React.Component {
 
   render() {
     return (
-      <div class="form-check form-switch">
+      <div className="custom-control custom-switch">
         <input
           onChange={() => {
             if (this.state.hero === RED_HAT) {
@@ -20,14 +20,15 @@ export default class HeroSwitch extends React.Component {
               this.props.onHeroChanged(RED_HAT);
             }
           }}
-          class="form-check-input"
           type="checkbox"
-          id="flexSwitchCheckDefault"
+          className="custom-control-input"
+          id="customSwitch1"
         />
-        <label class="form-check-label" for="flexSwitchCheckDefault">
-          Red hat or wolf
+        <label className="custom-control-label" htmlFor="customSwitch1">
+          {this.state.hero === RED_HAT ? "Red hat" : "Wolf"}
         </label>
       </div>
     );
   }
 }
+/* red hat / wolf*/

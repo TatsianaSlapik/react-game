@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/static/css/main.883c99e3.chunk.css",
+    "main.js": "/static/js/main.c7e7a3c6.chunk.js",
+    "main.js.map": "/static/js/main.c7e7a3c6.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.eb255346.js",
+    "runtime-main.js.map": "/static/js/runtime-main.eb255346.js.map",
+    "static/css/2.658248ec.chunk.css": "/static/css/2.658248ec.chunk.css",
+    "static/js/2.6e798fd1.chunk.js": "/static/js/2.6e798fd1.chunk.js",
+    "static/js/2.6e798fd1.chunk.js.map": "/static/js/2.6e798fd1.chunk.js.map",
+    "static/js/3.0b335a12.chunk.js": "/static/js/3.0b335a12.chunk.js",
+    "static/js/3.0b335a12.chunk.js.map": "/static/js/3.0b335a12.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.658248ec.chunk.css.map": "/static/css/2.658248ec.chunk.css.map",
+    "static/css/main.883c99e3.chunk.css.map": "/static/css/main.883c99e3.chunk.css.map",
+    "static/js/2.6e798fd1.chunk.js.LICENSE.txt": "/static/js/2.6e798fd1.chunk.js.LICENSE.txt",
+    "static/media/final-redhat-and-grandma.72d1609c.jpg": "/static/media/final-redhat-and-grandma.72d1609c.jpg",
+    "static/media/final-wolf.74da9a9a.jpg": "/static/media/final-wolf.74da9a9a.jpg",
+    "static/media/gameMusic.a1be6269.mp3": "/static/media/gameMusic.a1be6269.mp3",
+    "static/media/Cell.scss": "/static/media/wolf.c01144cf.png",
+    "static/media/stepSound.a6cccd2c.mp3": "/static/media/stepSound.a6cccd2c.mp3"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.eb255346.js",
+    "static/css/2.658248ec.chunk.css",
+    "static/js/2.6e798fd1.chunk.js",
+    "static/css/main.883c99e3.chunk.css",
+    "static/js/main.c7e7a3c6.chunk.js"
+  ]
+}
