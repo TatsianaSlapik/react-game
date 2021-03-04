@@ -18,6 +18,7 @@ export default class Win extends React.Component {
           onClick={() => {
             document.location.reload();
             localStorage.removeItem("game");
+            localStorage.removeItem("count");
           }}
           type="button"
           className="win_btn btn btn-warning"
