@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/react-game/static/css/main.63630a9c.chunk.css",
-    "main.js": "/react-game/static/js/main.820c3c1d.chunk.js",
-    "main.js.map": "/react-game/static/js/main.820c3c1d.chunk.js.map",
+    "main.css": "/react-game/static/css/main.2ff80b1d.chunk.css",
+    "main.js": "/react-game/static/js/main.73573c06.chunk.js",
+    "main.js.map": "/react-game/static/js/main.73573c06.chunk.js.map",
     "runtime-main.js": "/react-game/static/js/runtime-main.ce36ff2f.js",
     "runtime-main.js.map": "/react-game/static/js/runtime-main.ce36ff2f.js.map",
     "static/css/2.87a9c7a2.chunk.css": "/react-game/static/css/2.87a9c7a2.chunk.css",
@@ -11,10 +11,10 @@
     "static/js/3.ffcb5a07.chunk.js": "/react-game/static/js/3.ffcb5a07.chunk.js",
     "static/js/3.ffcb5a07.chunk.js.map": "/react-game/static/js/3.ffcb5a07.chunk.js.map",
     "index.html": "/react-game/index.html",
-    "precache-manifest.e2945ebe823f4df129319b58f50dc323.js": "/react-game/precache-manifest.e2945ebe823f4df129319b58f50dc323.js",
+    "precache-manifest.7586c8481b4403e9d396f29c60c232d5.js": "/react-game/precache-manifest.7586c8481b4403e9d396f29c60c232d5.js",
     "service-worker.js": "/react-game/service-worker.js",
     "static/css/2.87a9c7a2.chunk.css.map": "/react-game/static/css/2.87a9c7a2.chunk.css.map",
-    "static/css/main.63630a9c.chunk.css.map": "/react-game/static/css/main.63630a9c.chunk.css.map",
+    "static/css/main.2ff80b1d.chunk.css.map": "/react-game/static/css/main.2ff80b1d.chunk.css.map",
     "static/js/2.5e99c655.chunk.js.LICENSE.txt": "/react-game/static/js/2.5e99c655.chunk.js.LICENSE.txt",
     "static/media/final-redhat-and-grandma.jpg": "/react-game/static/media/final-redhat-and-grandma.755c630f.jpg",
     "static/media/final-wolf.jpg": "/react-game/static/media/final-wolf.dbee9fcc.jpg",
@@ -26,7 +26,7 @@
     "static/js/runtime-main.ce36ff2f.js",
     "static/css/2.87a9c7a2.chunk.css",
     "static/js/2.5e99c655.chunk.js",
-    "static/css/main.63630a9c.chunk.css",
-    "static/js/main.820c3c1d.chunk.js"
+    "static/css/main.2ff80b1d.chunk.css",
+    "static/js/main.73573c06.chunk.js"
   ]
 }
