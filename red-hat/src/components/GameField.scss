@@ -1,9 +1,13 @@
 .field {
-  width: 640px;
-  height: 640px;
+  width: 643px;
+  height: 643px;
   border: 1px solid black;
   background: #08ce6b;
   margin: auto;
+}
+.field.hard {
+  width: 620px;
+  height: 620px;
 }
 .row_new {
   display: flex;

@@ -142,6 +142,14 @@ export default class Game extends React.Component {
         </h1>
         <Counter key={this.state.levelNumber}></Counter>
         <div className="game_opt">
+          <ul className="game_ul">
+            <li>&#8592; - left</li>
+            <li>&#8592; - up</li>
+            <li>&#8595; - down</li>
+            <li>&#8594; - right</li>
+            <li>F11 - full screen</li>
+            <li>&#9141; - all sounds on/off</li>
+          </ul>
           <Autoplay></Autoplay>
           <Music></Music>
           <GameDifficultySwitch
