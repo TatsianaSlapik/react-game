@@ -7,9 +7,10 @@ import "./Win.scss";
 export default class Win extends React.Component {
   render() {
     return (
-      <div class="win card-body">
-        <h1 class="card-title">You win!</h1>
+      <div className="win card-body">
+        <h1 className="card-title">You win!</h1>
         <img
+          className="win_img"
           src={this.props.hero === RED_HAT ? redHatFinal : wolfFinal}
           alt="final"
         ></img>
@@ -19,7 +20,7 @@ export default class Win extends React.Component {
             localStorage.removeItem("game");
           }}
           type="button"
-          class="btn btn-primary"
+          className="win_btn btn btn-warning"
         >
           New Game
         </button>

@@ -1,15 +1,18 @@
 import GameField from "./GameField";
 import "./Game.scss";
-import { EASY, EasyLevels, HardLevels, RED_HAT } from "../config/levels";
+import { EASY, EasyLevels, HardLevels, RED_HAT, DAY } from "../config/levels";
 import React from "react";
 import Music from "./Music";
 import Counter from "./Counter";
+import Autoplay from "./Autoplay";
 import HeroSwitch from "./HeroSwitch";
 import Win from "./Win";
 import GameDifficultySwitch from "./GameDifficultySwitch";
 import NewGame from "./NewGame";
 import Statistics from "./Statistics";
+import BackgroundSwitch from "./BackgroundSwitch";
 const gameKey = "game";
+
 export default class Game extends React.Component {
   constructor(props) {
     super(props);
@@ -18,10 +21,12 @@ export default class Game extends React.Component {
       level: EasyLevels[this.props.levelNumber],
       hero: RED_HAT,
       difficultyLevel: EASY,
+      background: DAY,
     };
     this.handleLevelChange = this.handleLevelChange.bind(this);
     this.handleHeroChange = this.handleHeroChange.bind(this);
     this.handleDifficultyChange = this.handleDifficultyChange.bind(this);
+    this.handleBackgroundChange = this.handleBackgroundChange.bind(this);
 
     let savedGame = localStorage.getItem(gameKey);
     if (savedGame !== null) {
@@ -32,10 +37,6 @@ export default class Game extends React.Component {
   }
 
   handleLevelChange(e) {
-    console.log(
-      Object.keys(this.state.difficultyLevel === EASY ? EasyLevels : HardLevels)
-        .length
-    );
     this.setState({
       levelNumber: this.state.levelNumber + 1,
       level:
@@ -49,6 +50,7 @@ export default class Game extends React.Component {
             ],
       hero: this.state.hero,
       difficultyLevel: this.state.difficultyLevel,
+      background: this.state.background,
     });
     localStorage.setItem(gameKey, JSON.stringify(this.state));
     if (this.state.level === null) {
@@ -81,6 +83,7 @@ export default class Game extends React.Component {
       level: this.state.level,
       hero: hero,
       difficultyLevel: this.state.difficultyLevel,
+      background: this.state.background,
     });
     localStorage.setItem(gameKey, JSON.stringify(this.state));
   }
@@ -91,9 +94,21 @@ export default class Game extends React.Component {
       level: difficulty === EASY ? EasyLevels[1] : HardLevels[1],
       hero: this.state.hero,
       difficultyLevel: difficulty,
+      background: this.state.background,
     });
     localStorage.setItem(gameKey, JSON.stringify(this.state));
   }
+  handleBackgroundChange(background) {
+    this.setState({
+      levelNumber: this.state.levelNumber,
+      level: this.state.level,
+      hero: this.state.hero,
+      difficultyLevel: this.state.difficultyLevel,
+      background: background,
+    });
+    localStorage.setItem(gameKey, JSON.stringify(this.state));
+  }
+
   componentDidMount() {
     document.addEventListener("keydown", this.onKeyDown);
   }
@@ -121,23 +136,30 @@ export default class Game extends React.Component {
   }
   render() {
     return (
-      <div className="game">
+      <div className={`game ${this.state.background}`}>
         <h1>
           {this.state.level === null ? " " : "Level " + this.state.levelNumber}
         </h1>
         <Counter key={this.state.levelNumber}></Counter>
+        <div className="game_opt">
+          <Autoplay></Autoplay>
+          <Music></Music>
+          <GameDifficultySwitch
+            onDifficultyChanged={this.handleDifficultyChange}
+            difficulty={this.state.difficultyLevel}
+          ></GameDifficultySwitch>
+          <HeroSwitch
+            onHeroChanged={this.handleHeroChange}
+            hero={this.state.hero}
+          ></HeroSwitch>
+          <BackgroundSwitch
+            onBackgroundChanged={this.handleBackgroundChange}
+            background={this.state.background}
+          ></BackgroundSwitch>
+          <NewGame></NewGame>
 
-        <Music></Music>
-        <GameDifficultySwitch
-          onDifficultyChanged={this.handleDifficultyChange}
-          difficulty={this.state.difficultyLevel}
-        ></GameDifficultySwitch>
-        <HeroSwitch
-          onHeroChanged={this.handleHeroChange}
-          hero={this.state.hero}
-        ></HeroSwitch>
-        <NewGame></NewGame>
-        <Statistics></Statistics>
+          <Statistics></Statistics>
+        </div>
         {this.state.level === null ? (
           <Win hero={this.state.hero}></Win>
         ) : (

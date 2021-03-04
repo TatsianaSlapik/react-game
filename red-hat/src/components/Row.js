@@ -4,7 +4,7 @@ import React from "react";
 
 export default function Row(props) {
   return (
-    <div className="row align-items-start">
+    <div className="row_new ">
       {props.row.map((cell, index) =>
         cell.className === HERO ? (
           <Cell className={props.hero} key={index}></Cell>

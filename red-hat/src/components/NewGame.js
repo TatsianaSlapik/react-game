@@ -3,7 +3,7 @@ import React from "react";
 export default function NewGame() {
   return (
     <button
-      className="new"
+      className="new btn btn-info"
       onClick={() => {
         localStorage.clear();
         document.location.reload();

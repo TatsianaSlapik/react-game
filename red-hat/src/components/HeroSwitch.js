@@ -31,4 +31,3 @@ export default class HeroSwitch extends React.Component {
     );
   }
 }
-/* red hat / wolf*/

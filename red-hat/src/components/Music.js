@@ -87,9 +87,10 @@ export default class Music extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="music">
         <fieldset>
           <img
+            className="music_img"
             src={this.state.playMusic ? musicOn : musicOff}
             alt="music"
             onClick={this.togglePlayMusic}
@@ -99,7 +100,7 @@ export default class Music extends React.Component {
             max="100"
             step="10"
             type="range"
-            className=""
+            className="custom"
             id="gameMusic"
             onChange={(e) => {
               this.gameMusic.volume = e.target.value / 100;
@@ -108,6 +109,7 @@ export default class Music extends React.Component {
         </fieldset>
         <fieldset className="form-group">
           <img
+            className="music_img"
             src={this.state.playSound ? soundOn : soundOff}
             alt="sound"
             onClick={this.togglePlaySound}
@@ -117,7 +119,7 @@ export default class Music extends React.Component {
             max="100"
             step="10"
             type="range"
-            className=" custom custom-range"
+            className="custom"
             id="stepSound"
             onChange={(e) => {
               this.stepSound.volume = e.target.value / 100;

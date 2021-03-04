@@ -45,7 +45,7 @@ export default class Counter extends React.Component {
   render() {
     return (
       <div className="count">
-        <p>{this.state.count}</p>
+        <h2>{"Steps count: " + this.state.count}</h2>
       </div>
     );
   }

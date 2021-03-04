@@ -1,7 +1,12 @@
 .field {
-  width: 600px;
-  height: 600px;
+  width: 640px;
+  height: 640px;
   border: 1px solid black;
-  margin: auto;
   background: #08ce6b;
+  margin: auto;
+}
+.row_new {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
 }

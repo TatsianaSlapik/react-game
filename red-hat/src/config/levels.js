@@ -7,6 +7,8 @@ export const RED_HAT = "red-hat";
 export const WOLF = "wolf";
 export const HARD = "hard";
 export const EASY = "easy";
+export const DAY = "day";
+export const NIGHT = "night";
 
 export const EasyLevels = {
   1: [

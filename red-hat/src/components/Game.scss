@@ -1,5 +1,44 @@
-.game{
-  background: #a1d1c9;
+.game {
+  width: 1024px;
+  height: 768px;
+  margin: auto;
+}
+.game h1 {
+  text-align: center;
+  font-size: 50px;
+  font-style: oblique;
+  color: white;
 }
 
- 
+.game.day {
+  background-color: #1c718e;
+  background: linear-gradient(to top, #fefce9, #1c718e);
+  padding: 10px;
+  border: 1px solid rgb(53, 53, 53);
+}
+.game.night {
+  background-color: #062029;
+  background: linear-gradient(to top, #42402b, #062029);
+  padding: 10px;
+  border: 1px solid rgb(53, 53, 53);
+}
+.count {
+  text-align: center;
+  font-size: 25px;
+  color: white;
+}
+.custom-control-label {
+  color: white;
+}
+.game_opt {
+  position: absolute;
+}
+.table {
+  color: white;
+  background-color: #3c4c52;
+  font-size: 13px;
+  width: 14px;
+}
+.table th {
+  padding: 0.5rem;
+}

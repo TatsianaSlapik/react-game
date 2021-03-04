@@ -3,10 +3,18 @@
   height: 600px;
   border: 1px solid black;
   margin: auto;
-  background: #f3e66e;
+  background: #08ce6b;
 
   background-repeat: no-repeat;
-  h1 {
-    margin-left: 200px;
-  }
+}
+.win_img {
+  width: 400px;
+  height: 400px;
+
+  margin-left: 80px;
+  margin-top: 40px;
+}
+.win_btn {
+  position: absolute;
+  margin-left: -250px;
 }
