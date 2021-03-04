@@ -39,5 +39,6 @@
   },
   "devDependencies": {
     "react-devtools": "^4.10.1"
-  }
+  },
+  "homepage": "https://tatsianaslapik.github.io/react-game"
 }
