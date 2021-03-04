@@ -1,5 +1,7 @@
 ### Demo link: https://tatsianaslapik.github.io/react-game/
 
+### Demo video: https://youtu.be/_UWnOJrPvWc
+
 ### Available Scripts
 
 Please run

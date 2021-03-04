@@ -11,6 +11,7 @@ import GameDifficultySwitch from "./GameDifficultySwitch";
 import NewGame from "./NewGame";
 import Statistics from "./Statistics";
 import BackgroundSwitch from "./BackgroundSwitch";
+import RSS from "../assets/rsschool.png";
 const gameKey = "game";
 
 export default class Game extends React.Component {
@@ -141,6 +142,7 @@ export default class Game extends React.Component {
           {this.state.level === null ? " " : "Level " + this.state.levelNumber}
         </h1>
         <Counter key={this.state.levelNumber}></Counter>
+        <img className="rss_logo" src={RSS} alt="RS school" />
         <div className="game_opt">
           <ul className="game_ul">
             <li>&#8592; - left</li>

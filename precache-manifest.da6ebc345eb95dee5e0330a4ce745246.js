@@ -1,35 +1,35 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6230ef46bab064d4dd5369298e02cc56",
+    "revision": "966f160376f8a0f4fa19c2f432caf875",
     "url": "/react-game/index.html"
   },
   {
-    "revision": "da03153c762fce5cb81a",
+    "revision": "1e1ae53aa748793662dc",
     "url": "/react-game/static/css/2.87a9c7a2.chunk.css"
   },
   {
-    "revision": "68966af09f16350065a6",
-    "url": "/react-game/static/css/main.2ff80b1d.chunk.css"
+    "revision": "d7035af0ea9685210be6",
+    "url": "/react-game/static/css/main.5964de25.chunk.css"
   },
   {
-    "revision": "da03153c762fce5cb81a",
-    "url": "/react-game/static/js/2.5e99c655.chunk.js"
+    "revision": "1e1ae53aa748793662dc",
+    "url": "/react-game/static/js/2.0bfe92d7.chunk.js"
   },
   {
     "revision": "f5fc2afae58c4ffc30c6148864765d4b",
-    "url": "/react-game/static/js/2.5e99c655.chunk.js.LICENSE.txt"
+    "url": "/react-game/static/js/2.0bfe92d7.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b73e8686e3bfa4f31e7d",
-    "url": "/react-game/static/js/3.ffcb5a07.chunk.js"
+    "revision": "eeb48489df8c4140e620",
+    "url": "/react-game/static/js/3.d98b1c58.chunk.js"
   },
   {
-    "revision": "68966af09f16350065a6",
-    "url": "/react-game/static/js/main.ecaa5b31.chunk.js"
+    "revision": "d7035af0ea9685210be6",
+    "url": "/react-game/static/js/main.88b144b6.chunk.js"
   },
   {
-    "revision": "5a2549bdd48a9e5b7246",
-    "url": "/react-game/static/js/runtime-main.ce36ff2f.js"
+    "revision": "23cbe622c19ba683411a",
+    "url": "/react-game/static/js/runtime-main.89895348.js"
   },
   {
     "revision": "755c630f22bee6d73a9f902b1386fe06",
@@ -54,6 +54,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "79395290c69ed8ed5ea3601a169397a8",
     "url": "/react-game/static/media/redHat.79395290.png"
+  },
+  {
+    "revision": "4f59ae13b1f0ffcfcb6d910bfc4cc61b",
+    "url": "/react-game/static/media/rsschool.4f59ae13.png"
   },
   {
     "revision": "fa592fb564c34da3ed5eb78cd4e72d87",
